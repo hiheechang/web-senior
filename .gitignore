@@ -1,0 +1,7 @@
+/robofriends/node_modules
+
+# testing
+/robofriends/coverage
+
+# production
+/robofriends/build
