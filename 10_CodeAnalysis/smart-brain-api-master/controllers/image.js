@@ -8,13 +8,13 @@ const app = new Clarifai.App({
 const handleApiCall = (req, res) => {
   app.models
     .predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
-    .then(data => {
+    .then(data => { // get response
       res.json(data);
     })
     .catch(err => res.status(400).json('unable to work with API'))
 }
 
-const handleImage = (req, res, db) => {
+const handleImage = (req, res, db) => { //when img sent, increments
   const { id } = req.body;
   db('users').where('id', '=', id)
   .increment('entries', 1)

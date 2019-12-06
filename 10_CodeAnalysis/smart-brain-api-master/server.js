@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt-nodejs');
-const cors = require('cors');
-const knex = require('knex');
+const bcrypt = require('bcrypt-nodejs'); //for hashing password
+const cors = require('cors'); // which domains can access this
+const knex = require('knex'); // SQL query
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
@@ -21,7 +21,7 @@ const db = knex({
 
 const app = express();
 
-app.use(cors())
+app.use(cors()) // any domain can access this
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=> { res.send(db.users) })
