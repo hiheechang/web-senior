@@ -28,3 +28,19 @@ app.use(compression())
 - More DBs
 - Database Type
 
+## Caching
+
+- CDN : cache html,css,javascript
+- server : store in redis, database .... instead of slow APIs
+- browser : cache in client side <--by ServiceWorker
+
+## Load Balancing
+
+- handle multiple requests
+- for static files : NGINX, ApacheServer
+
+npm install -g loadtest
+
+loadtest -t 5 -c 100 --rps 100 http://localhost:80
+-time -numOfClient --requestPerSecond
+
